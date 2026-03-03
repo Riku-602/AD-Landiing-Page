@@ -4,16 +4,16 @@ import { Check, Heart, Mail, Lock, Clock, Sparkles } from 'lucide-react';
 import { ImageWithFallback } from './components/figma/ImageWithFallback';
 
 // Product images
-import heroImage from 'figma:asset/7d0303cfb5cd80cb5872a1d57fd758f3c9d026b0.png';
-import productGrid from 'figma:asset/8f37a317b110bb3b68d74e3512c444b64c890bfd.png';
-import lifestyleNeon from 'figma:asset/a6537bba9e6c68fcba241895629e33be5d980d90.png';
-import productWhite from 'figma:asset/5aca35af8d97f46d5661fa3a075b27732001e4a9.png';
-import strapDetail from 'figma:asset/99cac5594f9d0ed913be1fc01402b7e0360c01bb.png';
-import interiorShot from 'figma:asset/0e128c4aa57540edd449e3b55f86a0ed3ed86b7c.png';
+import heroImage from '../assets/7d0303cfb5cd80cb5872a1d57fd758f3c9d026b0.png';
+import productGrid from '../assets/8f37a317b110bb3b68d74e3512c444b64c890bfd.png';
+import lifestyleNeon from '../assets/a6537bba9e6c68fcba241895629e33be5d980d90.png';
+import productWhite from '../assets/5aca35af8d97f46d5661fa3a075b27732001e4a9.png';
+import strapDetail from '../assets/99cac5594f9d0ed913be1fc01402b7e0360c01bb.png';
+import interiorShot from '../assets/0e128c4aa57540edd449e3b55f86a0ed3ed86b7c.png';
 
 // New brand assets
-import neonLogo from 'figma:asset/6ce1972787b941e564335d2cd47d6e152b1ab8c6.png';
-import allColorsGroup from 'figma:asset/5da4c05b47c1c12028666f6b1ec41aed11a3e938.png';
+import neonLogo from '../assets/6ce1972787b941e564335d2cd47d6e152b1ab8c6.png';
+import allColorsGroup from '../assets/5da4c05b47c1c12028666f6b1ec41aed11a3e938.png';
 
 export default function App() {
   const [timeLeft, setTimeLeft] = useState({
