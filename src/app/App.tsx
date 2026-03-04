@@ -75,19 +75,22 @@ export default function App() {
             alt="THIX Heartbreaker bag lifestyle"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/90"></div>
         </div>
 
         {/* Content */}
         <div className="relative z-10 text-center max-w-3xl mx-auto">
-          {/* Neon Logo */}
+          {/* Logo */}
           <motion.div 
-            className="mb-8 flex justify-center"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+            className="mb-8"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
           >
-            <img src={neonLogo} alt="THIX" className="w-48 md:w-64 lg:w-80" />
+            <h1 className="text-5xl md:text-7xl mb-2" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+              <span className="text-pink-600">THI</span>
+              <span className="text-black">X</span>
+            </h1>
           </motion.div>
 
           {/* Headline */}
@@ -96,29 +99,28 @@ export default function App() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            style={{ fontFamily: 'Georgia, serif' }}
           >
             The Bad Girl Bag.
           </motion.h2>
 
           {/* Subtext */}
           <motion.p 
-            className="text-lg md:text-xl text-gray-700 mb-10"
+            className="text-lg md:text-xl text-gray-700 mb-10 tracking-wide"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.6 }}
           >
-            Limited First Drop.
+            Limited First Drop
           </motion.p>
 
           {/* CTA Button */}
           <motion.button
             onClick={scrollToCheckout}
-            className="bg-pink-600 hover:bg-pink-500 text-white px-12 py-5 md:px-16 md:py-6 text-lg md:text-xl tracking-widest uppercase transition-all duration-200 shadow-[0_0_30px_rgba(236,72,153,0.6)] hover:shadow-[0_0_50px_rgba(236,72,153,0.9)] border border-pink-400"
+            className="bg-pink-600 hover:bg-pink-700 text-white px-12 py-5 md:px-16 md:py-6 text-lg md:text-xl tracking-wide transition-colors duration-200 shadow-lg hover:shadow-xl"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.6 }}
-            whileHover={{ scale: 1.05, y: -2 }}
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
             PRE-ORDER NOW
@@ -169,9 +171,9 @@ export default function App() {
               <motion.button
                 key={color.value}
                 onClick={() => setSelectedColor(color.value)}
-                className={`group relative px-6 py-3 border-2 transition-all duration-300 min-w-[160px] ${
+                className={`group relative px-6 py-3 border-2 bg-black transition-all duration-200 min-w-[160px] ${
                   selectedColor === color.value
-                    ? 'border-pink-500 bg-pink-500/20'
+                    ? 'border-pink-500'
                     : 'border-gray-700 hover:border-pink-500/50'
                 }`}
                 initial={{ opacity: 0, y: 20 }}
@@ -180,6 +182,11 @@ export default function App() {
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
+                style={{
+                  boxShadow: selectedColor === color.value 
+                    ? '0 0 20px rgba(236, 72, 153, 0.5)' 
+                    : 'none'
+                }}
               >
                 <div className="flex items-center justify-center gap-3">
                   <div 
@@ -192,15 +199,6 @@ export default function App() {
                 </div>
                 {!color.available && (
                   <span className="absolute -top-2 -right-2 text-xs text-pink-400 uppercase bg-black px-2 py-1 border border-pink-500">Soon</span>
-                )}
-                {selectedColor === color.value && (
-                  <motion.div
-                    className="absolute inset-0 border-2 border-pink-500"
-                    layoutId="colorSelector"
-                    style={{ 
-                      boxShadow: '0 0 20px rgba(236, 72, 153, 0.5)'
-                    }}
-                  />
                 )}
               </motion.button>
             ))}
