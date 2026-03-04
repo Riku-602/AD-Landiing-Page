@@ -104,14 +104,14 @@ export default function App() {
           </motion.h2>
 
           {/* Subtext */}
-          <motion.p 
+          {/* <motion.p 
             className="text-lg md:text-xl text-gray-700 mb-10 tracking-wide"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.6 }}
           >
             Limited First Drop
-          </motion.p>
+          </motion.p> */}
 
           {/* CTA Button */}
           <motion.button
@@ -123,7 +123,7 @@ export default function App() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            PRE-ORDER NOW
+            Shop NOW
           </motion.button>
         </div>
       </motion.section>
