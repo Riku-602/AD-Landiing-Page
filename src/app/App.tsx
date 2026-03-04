@@ -62,13 +62,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <motion.section 
+      {/* <motion.section 
         className="relative h-screen flex flex-col items-center justify-center px-4 overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
             src={heroImage}
@@ -78,9 +77,7 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/90"></div>
         </div>
 
-        {/* Content */}
         <div className="relative z-10 text-center max-w-3xl mx-auto">
-          {/* Logo */}
           <motion.div 
             className="mb-8"
             initial={{ y: -20, opacity: 0 }}
@@ -93,7 +90,6 @@ export default function App() {
             </h1>
           </motion.div>
 
-          {/* Headline */}
           <motion.h2 
             className="text-4xl md:text-6xl lg:text-7xl mb-4 text-black tracking-tight"
             initial={{ y: 20, opacity: 0 }}
@@ -103,17 +99,6 @@ export default function App() {
             The Bad Girl Bag.
           </motion.h2>
 
-          {/* Subtext */}
-          {/* <motion.p 
-            className="text-lg md:text-xl text-gray-700 mb-10 tracking-wide"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-          >
-            Limited First Drop
-          </motion.p> */}
-
-          {/* CTA Button */}
           <motion.button
             onClick={scrollToCheckout}
             className="bg-pink-600 hover:bg-pink-700 text-white px-12 py-5 md:px-16 md:py-6 text-lg md:text-xl tracking-wide transition-colors duration-200 shadow-lg hover:shadow-xl"
@@ -126,8 +111,62 @@ export default function App() {
             Shop NOW
           </motion.button>
         </div>
-      </motion.section>
+      </motion.section> */}
+<motion.section 
+        className="relative h-screen flex flex-col items-center justify-center px-4 overflow-hidden bg-black"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        {/* Content */}
+        <div className="relative z-10 text-center max-w-3xl mx-auto">
+          {/* Neon Logo */}
+          <motion.div 
+            className="mb-12 flex justify-center"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ 
+              scale: 1, 
+              opacity: 1
+            }}
+            transition={{ 
+              delay: 0.2, 
+              duration: 0.8, 
+              ease: "easeOut" 
+            }}
+          >
+            <motion.img 
+              src={neonLogo} 
+              alt="THIX" 
+              className="w-64 md:w-80 lg:w-96"
+              animate={{
+                filter: [
+                  'drop-shadow(0 0 20px rgba(236, 72, 153, 0.5))',
+                  'drop-shadow(0 0 40px rgba(236, 72, 153, 0.7))',
+                  'drop-shadow(0 0 20px rgba(236, 72, 153, 0.5))'
+                ]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </motion.div>
 
+          {/* CTA Button */}
+          <motion.button
+            onClick={scrollToCheckout}
+            className="bg-pink-600 hover:bg-pink-500 text-white px-12 py-5 md:px-16 md:py-6 text-lg md:text-xl tracking-widest uppercase transition-all duration-200 shadow-[0_0_30px_rgba(236,72,153,0.6)] hover:shadow-[0_0_50px_rgba(236,72,153,0.9)] border border-pink-400"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            SHOP NOW
+          </motion.button>
+        </div>
+      </motion.section>
       {/* Future Colors Teaser */}
       <section className="py-16 md:py-24 px-4 bg-black relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-pink-950/20 to-black"></div>
